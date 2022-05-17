@@ -40,7 +40,8 @@ namespace AspNetCoreIdentity.Config
         private static void ConfigureKissLog(IOptionsBuilder options, IConfiguration configuration)
         {
             KissLogConfiguration.Listeners
-                .Add(new RequestLogsApiListener(new Application(configuration["KissLog.OrganizationId"], configuration["KissLog.ApplicationId"]))
+                .Add(new RequestLogsApiListener(new Application(configuration["KissLog.OrganizationId"],
+                                                                configuration["KissLog.ApplicationId"]))
                 {
                     ApiUrl = configuration["KissLog.ApiUrl"]
                 });
