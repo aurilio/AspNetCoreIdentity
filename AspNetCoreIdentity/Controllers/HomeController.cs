@@ -10,6 +10,14 @@ namespace AspNetCoreIdentity.Controllers
     [Authorize]
     public class HomeController : Controller
     {
+        // Repare o novo nome da Interface
+        private readonly IKLogger _logger;
+
+        public HomeController(IKLogger logger)
+        {
+            _logger = logger;
+        }
+
         public IActionResult Index()
         {
             return View();
